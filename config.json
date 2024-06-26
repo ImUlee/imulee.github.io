@@ -1,7 +1,10 @@
 {
     "title":"有理。",
+    "displayTitle":"Ulee's NOTE",
     "subTitle":"Life & Knowledge",
     "avatarUrl":"https://pic.ulee.link/file/e76aff1a202c69f9de4f3.png",
+    "email":"i@banana7.cn",
     "GMEEK_VERSION":"last",
     "singlePage":["about"],
+    "i18n":"CN",
 }
