@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>有理。</title><link>https://imulee.github.io</link><description>Life &amp; Knowledge</description><copyright>有理。</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic.ulee.link/file/3359ea1a6924c10323546.jpg</url><title>avatar</title><link>https://imulee.github.io</link></image><lastBuildDate>Thu, 27 Jun 2024 02:55:55 +0000</lastBuildDate><managingEditor>有理。</managingEditor><ttl>60</ttl><webMaster>有理。</webMaster><item><title>Redmi AX6 恢复官版系统</title><link>https://imulee.github.io/post/Redmi%20AX6%20-hui-fu-guan-ban-xi-tong.html</link><description>1. 通过网线电脑与路由器连接&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>有理。</title><link>https://imulee.github.io</link><description>Life &amp; Knowledge</description><copyright>有理。</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic.ulee.link/file/3359ea1a6924c10323546.jpg</url><title>avatar</title><link>https://imulee.github.io</link></image><lastBuildDate>Thu, 27 Jun 2024 02:58:56 +0000</lastBuildDate><managingEditor>有理。</managingEditor><ttl>60</ttl><webMaster>有理。</webMaster><item><title>Redmi AX6 恢复官版系统</title><link>https://imulee.github.io/post/Redmi%20AX6%20-hui-fu-guan-ban-xi-tong.html</link><description>1. 通过网线电脑与路由器连接&#13;
 2. 使用 MobaXterm 来连接，将解压后的两个 ubi 格式文件（mibib.bin、appsbl.bin）上传至 /tmp 目录下&#13;
 3. SSH 输入以下命令查看分区确认 `mtd1` 和 `mtd7` 的分区是否存在&#13;
 &#13;
@@ -36,7 +36,6 @@ mtd write /tmp/appsbl.bin /dev/mtd7&#13;
 &#13;
 输入完命令一分钟后，路由器断电并设置电脑ip为192.168.31.100，&#13;
 确保通过网线电脑与路由器连接，用小米修复工具电脑退出杀毒软件，还有win10的自带windows Defender防火墙  杀毒，修复工具才会传包给路由器修复.打开小米路由修复工具，按住路由器reset开机后修复工具选择192.168.31.100的网卡，&#13;
-修复进入救砖待机界面，再次断电，重新按住reset键插电橙灯闪烁后松手。</description><guid isPermaLink="true">https://imulee.github.io/post/Redmi%20AX6%20-hui-fu-guan-ban-xi-tong.html</guid><pubDate>Wed, 26 Jun 2024 14:51:18 +0000</pubDate></item><item><title>关于</title><link>https://imulee.github.io/about.html</link><description>`&lt;br/&gt;`&#13;
-`&lt;br/&gt;`&#13;
+修复进入救砖待机界面，再次断电，重新按住reset键插电橙灯闪烁后松手。</description><guid isPermaLink="true">https://imulee.github.io/post/Redmi%20AX6%20-hui-fu-guan-ban-xi-tong.html</guid><pubDate>Wed, 26 Jun 2024 14:51:18 +0000</pubDate></item><item><title>关于</title><link>https://imulee.github.io/about.html</link><description>&#13;
 &#13;
 我过着一种不正确的生活。</description><guid isPermaLink="true">https://imulee.github.io/about.html</guid><pubDate>Thu, 27 Jun 2024 02:24:13 +0000</pubDate></item></channel></rss>
