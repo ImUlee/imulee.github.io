@@ -9,16 +9,88 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="### 恢复官版系统
-SSH 链接。">
+<meta name="description" content="1. 通过网线电脑与路由器连接
+2. 使用 MobaXterm 来连接，将解压后的两个 ubi 格式文件（mibib.bin、appsbl.bin）上传至 /tmp 目录下
+3. SSH 输入以下命令查看分区确认 `mtd1` 和 `mtd7` 的分区是否存在
+
+`cat /proc/mtd`
+
+会出现以下详细列表：
+````
+root@lede:~# cat /proc/mtd
+dev: size erasesize name
+mtd0: 00100000 00020000 “0:sbl1”
+mtd1: 00100000 00020000 “0:mibib”
+mtd2: 00300000 00020000 “0:qsee”
+mtd3: 00080000 00020000 “0:devcfg”
+mtd4: 00080000 00020000 “0:rpm”
+mtd5: 00080000 00020000 “0:cdt”
+mtd6: 00080000 00020000 “0:appsblenv”
+mtd7: 00100000 00020000 “0:appsbl”
+mtd8: 00080000 00020000 “0:art”
+mtd9: 00080000 00020000 “bdata”
+mtd10: 00080000 00020000 “crash”
+mtd11: 00080000 00020000 “crash_syslog”
+mtd12: 023c0000 00020000 “rootfs”
+mtd13: 023c0000 00020000 “rootfs_1”
+mtd14: 01ec0000 00020000 “overlay”
+mtd15: 00080000 00020000 “rsvd0”
+````
+确认 `mtd1` 和 `mtd7` 存在无误后开始刷写，SSH 连接路由器依次输入以下
+```
+mtd erase /dev/mtd1
+mtd write /tmp/mibib.bin /dev/mtd1
+mtd erase /dev/mtd7
+mtd write /tmp/appsbl.bin /dev/mtd7
+```
+
+输入完命令一分钟后，路由器断电并设置电脑ip为192.168.31.100，
+确保通过网线电脑与路由器连接，用小米修复工具电脑退出杀毒软件，还有win10的自带windows Defender防火墙  杀毒，修复工具才会传包给路由器修复.打开小米路由修复工具，按住路由器reset开机后修复工具选择192.168.31.100的网卡，
+修复进入救砖待机界面，再次断电，重新按住reset键插电橙灯闪烁后松手。">
 <meta property="og:title" content="Redmi AX6 恢复官版系统">
-<meta property="og:description" content="### 恢复官版系统
-SSH 链接。">
+<meta property="og:description" content="1. 通过网线电脑与路由器连接
+2. 使用 MobaXterm 来连接，将解压后的两个 ubi 格式文件（mibib.bin、appsbl.bin）上传至 /tmp 目录下
+3. SSH 输入以下命令查看分区确认 `mtd1` 和 `mtd7` 的分区是否存在
+
+`cat /proc/mtd`
+
+会出现以下详细列表：
+````
+root@lede:~# cat /proc/mtd
+dev: size erasesize name
+mtd0: 00100000 00020000 “0:sbl1”
+mtd1: 00100000 00020000 “0:mibib”
+mtd2: 00300000 00020000 “0:qsee”
+mtd3: 00080000 00020000 “0:devcfg”
+mtd4: 00080000 00020000 “0:rpm”
+mtd5: 00080000 00020000 “0:cdt”
+mtd6: 00080000 00020000 “0:appsblenv”
+mtd7: 00100000 00020000 “0:appsbl”
+mtd8: 00080000 00020000 “0:art”
+mtd9: 00080000 00020000 “bdata”
+mtd10: 00080000 00020000 “crash”
+mtd11: 00080000 00020000 “crash_syslog”
+mtd12: 023c0000 00020000 “rootfs”
+mtd13: 023c0000 00020000 “rootfs_1”
+mtd14: 01ec0000 00020000 “overlay”
+mtd15: 00080000 00020000 “rsvd0”
+````
+确认 `mtd1` 和 `mtd7` 存在无误后开始刷写，SSH 连接路由器依次输入以下
+```
+mtd erase /dev/mtd1
+mtd write /tmp/mibib.bin /dev/mtd1
+mtd erase /dev/mtd7
+mtd write /tmp/appsbl.bin /dev/mtd7
+```
+
+输入完命令一分钟后，路由器断电并设置电脑ip为192.168.31.100，
+确保通过网线电脑与路由器连接，用小米修复工具电脑退出杀毒软件，还有win10的自带windows Defender防火墙  杀毒，修复工具才会传包给路由器修复.打开小米路由修复工具，按住路由器reset开机后修复工具选择192.168.31.100的网卡，
+修复进入救砖待机界面，再次断电，重新按住reset键插电橙灯闪烁后松手。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://imulee.github.io/post/Redmi%20AX6%20-hui-fu-guan-ban-xi-tong.html">
 <meta property="og:image" content="https://pic.ulee.link/file/3359ea1a6924c10323546.jpg">
 <title>Redmi AX6 恢复官版系统</title>
-
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 </head>
 <style>
@@ -42,7 +114,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     .postTitle{font-size:24px;}
 }
 </style>
-
+<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}</style><style>.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}</style>
 
 
 
@@ -72,8 +144,45 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><h3>恢复官版系统</h3>
-<p>SSH 链接</p></div>
+<div class="markdown-body" id="postBody"><ol>
+<li>通过网线电脑与路由器连接</li>
+<li>使用 MobaXterm 来连接，将解压后的两个 ubi 格式文件（mibib.bin、appsbl.bin）上传至 /tmp 目录下</li>
+<li>SSH 输入以下命令查看分区确认 <code class="notranslate">mtd1</code> 和 <code class="notranslate">mtd7</code> 的分区是否存在</li>
+</ol>
+<p><code class="notranslate">cat /proc/mtd</code></p>
+<p>会出现以下详细列表：</p>
+<pre class="notranslate"><code class="notranslate">root@lede:~# cat /proc/mtd
+dev: size erasesize name
+mtd0: 00100000 00020000 “0:sbl1”
+mtd1: 00100000 00020000 “0:mibib”
+mtd2: 00300000 00020000 “0:qsee”
+mtd3: 00080000 00020000 “0:devcfg”
+mtd4: 00080000 00020000 “0:rpm”
+mtd5: 00080000 00020000 “0:cdt”
+mtd6: 00080000 00020000 “0:appsblenv”
+mtd7: 00100000 00020000 “0:appsbl”
+mtd8: 00080000 00020000 “0:art”
+mtd9: 00080000 00020000 “bdata”
+mtd10: 00080000 00020000 “crash”
+mtd11: 00080000 00020000 “crash_syslog”
+mtd12: 023c0000 00020000 “rootfs”
+mtd13: 023c0000 00020000 “rootfs_1”
+mtd14: 01ec0000 00020000 “overlay”
+mtd15: 00080000 00020000 “rsvd0”
+</code></pre>
+<p>确认 <code class="notranslate">mtd1</code> 和 <code class="notranslate">mtd7</code> 存在无误后开始刷写，SSH 连接路由器依次输入以下</p>
+<pre class="notranslate"><code class="notranslate">mtd erase /dev/mtd1
+mtd write /tmp/mibib.bin /dev/mtd1
+mtd erase /dev/mtd7
+mtd write /tmp/appsbl.bin /dev/mtd7
+</code></pre>
+<p>输入完命令一分钟后，路由器断电并设置电脑ip为192.168.31.100，<br>
+确保通过网线电脑与路由器连接，用小米修复工具电脑退出杀毒软件，还有win10的自带windows Defender防火墙  杀毒，修复工具才会传包给路由器修复.打开小米路由修复工具，按住路由器reset开机后修复工具选择192.168.31.100的网卡，<br>
+修复进入救砖待机界面，再次断电，重新按住reset键插电橙灯闪烁后松手。</p>
+<p>然后我们看到救砖软件里面开始上传固件后等待蓝灯闪烁等待1分钟断电、重新插电即可恢复到官方系统。</p>
+<p>恢复成功后建议升级最新版固件</p>
+<div class="markdown-alert markdown-alert-important"><p class="markdown-alert-title"><svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p><p><a href="https://www.right.com.cn/forum/forum.php?mod=viewthread&amp;tid=8236039&amp;extra=&amp;highlight=uboot&amp;page=1" rel="nofollow">right - ax6 ax3600刷uboot后恢复官方系统方法</a></p>
+</div></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
 <div class="comments" id="comments"></div>
