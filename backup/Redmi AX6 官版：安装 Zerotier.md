@@ -60,3 +60,6 @@
 > 停止命令：/etc/init.d/zerotier stop
 > 开机自启：/etc/init.d/zerotier enable
 > 启动状态：/etc/init.d/zerotier status
+
+----
+下载地址：https://github.com/ImUlee/imulee.github.io/releases/tag/RedmiAX6
