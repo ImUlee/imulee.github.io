@@ -19,4 +19,5 @@ vi /etc/rc.local
 echo -e 'root\nroot' | passwd root
 ````
 
+----
 下载地址：https://github.com/ImUlee/imulee.github.io/releases/tag/RedmiAX6
