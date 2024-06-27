@@ -5,7 +5,9 @@
     "GMEEK_VERSION":"last",
     "avatarUrl":"https://pic.ulee.link/file/3359ea1a6924c10323546.jpg",
     "faviconUrl":"https://raw.githubusercontent.com/ImUlee/imulee.github.io/main/logo.svg",
+    "homeUrl":"https://imulee.github.io",
     "email":"i@banana7.cn",
+    "onePageListNum":15,
     "singlePage":["about"],
     "i18n":"CN"
 }
