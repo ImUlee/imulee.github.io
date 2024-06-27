@@ -38,6 +38,6 @@
 
 最后，看到救砖软件里面开始上传固件后等待蓝灯闪烁等待1分钟断电、重新插电即可恢复到官方系统。
 
-下载地址：https://github.com/ImUlee/imulee.github.io/releases/tag/RedmiAX6
-
 - [right - ax6 ax3600刷uboot后恢复官方系统方法](https://www.right.com.cn/forum/forum.php?mod=viewthread&tid=8236039&extra=&highlight=uboot&page=1)
+----
+下载地址：https://github.com/ImUlee/imulee.github.io/releases/tag/RedmiAX6
