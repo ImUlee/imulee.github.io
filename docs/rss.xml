@@ -1,5 +1,23 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>有理。</title><link>https://imulee.github.io</link><description>Life &amp; Knowledge</description><copyright>有理。</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic.ulee.link/file/3359ea1a6924c10323546.jpg</url><title>avatar</title><link>https://imulee.github.io</link></image><lastBuildDate>Thu, 27 Jun 2024 06:44:17 +0000</lastBuildDate><managingEditor>有理。</managingEditor><ttl>60</ttl><webMaster>有理。</webMaster><item><title>Redmi AX6 官版：安装 Zerotier</title><link>https://imulee.github.io/post/Redmi%20AX6%20-guan-ban-%EF%BC%9A-an-zhuang-%20Zerotier.html</link><description>## 挂载 overlay&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>有理。</title><link>https://imulee.github.io</link><description>Life &amp; Knowledge</description><copyright>有理。</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://pic.ulee.link/file/3359ea1a6924c10323546.jpg</url><title>avatar</title><link>https://imulee.github.io</link></image><lastBuildDate>Thu, 27 Jun 2024 06:46:30 +0000</lastBuildDate><managingEditor>有理。</managingEditor><ttl>60</ttl><webMaster>有理。</webMaster><item><title>官版：一键解锁 xmir-patcher-main</title><link>https://imulee.github.io/post/guan-ban-%EF%BC%9A-yi-jian-jie-suo-%20xmir-patcher-main.html</link><description>目测本论坛最强小米/红米路由器一键ssh工具, 刷机告别ttl, 也不需要另外一个路由器了(比如ax6). 已经测试过CR880X, AX6, AX6S, AX5JDC, AX3000.&#13;
+&#13;
+### 使用方法:&#13;
+Win和Linux可以运行&#13;
+1. 运行run.bat (linux跑run.sh)&#13;
+2. 主菜单选1输入目标路由器ip地址&#13;
+3. 主菜单选2开启ssh (注意此时ssh并没固化,重启会失效,要固化做第四步,也可以直接开始刷分区和uboot)&#13;
+4. (可选)主菜单选8再选7固化ssh.&#13;
+&#13;
+默认账号&amp;密码：root/root&#13;
+修改root密码：passwd&#13;
+&#13;
+### 补充：&#13;
+&#13;
+ssh默认的密码会改成root. ssh即使固化之后,重启之后密码可能会被恢复成sn算出来的那个, 原因不明, 可能小米有保护机制.&#13;
+想要永久固化的话, 在/etc/rc.local最后一行上面加一行‘替换root为新密码’&#13;
+&#13;
+vi /etc/rc.local&#13;
+echo -e 'root\nroot' | passwd root。</description><guid isPermaLink="true">https://imulee.github.io/post/guan-ban-%EF%BC%9A-yi-jian-jie-suo-%20xmir-patcher-main.html</guid><pubDate>Thu, 27 Jun 2024 06:45:57 +0000</pubDate></item><item><title>Redmi AX6 官版：安装 Zerotier</title><link>https://imulee.github.io/post/Redmi%20AX6%20-guan-ban-%EF%BC%9A-an-zhuang-%20Zerotier.html</link><description>## 挂载 overlay&#13;
 &#13;
 1. 创建文件 /etc/init.d/miwifi_overlay , (可vi /etc/init.d/miwifi_overlay, i, 粘贴, :wq)&#13;
 &#13;
