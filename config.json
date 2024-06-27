@@ -7,7 +7,7 @@
     "faviconUrl":"https://raw.githubusercontent.com/ImUlee/imulee.github.io/main/logo.svg",
     "homeUrl":"https://imulee.github.io",
     "email":"i@banana7.cn",
-    "#CFD3D7":["#CFD3D7"],
+    "yearColorList":["#CFD3D7"],
     "onePageListNum":15,
     "singlePage":["about"],
     "i18n":"CN"
