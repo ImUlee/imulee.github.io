@@ -1,9 +1,10 @@
 {
     "title":"有理。",
-    "displayTitle":"Ulee's NOTE",
+    "displayTitle":"Ulee",
     "subTitle":"Life & Knowledge",
     "GMEEK_VERSION":"last",
-    "avatarUrl":"https://raw.githubusercontent.com/ImUlee/imulee.github.io/main/logo.svg",
+    "avatarUrl":"https://pic.ulee.link/file/3359ea1a6924c10323546.jpg",
+    "faviconUrl":"https://raw.githubusercontent.com/ImUlee/imulee.github.io/main/logo.svg",
     "email":"i@banana7.cn",
     "singlePage":["about"],
     "i18n":"CN"
